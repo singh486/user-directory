@@ -52,6 +52,7 @@ function changeHeader(ev){
             header4.textContent = newTitle
             break
     }
+    document.getElementById('form1').elements[0].value = ''
 }
 
 const backgroundButton = document.getElementById('colorChange')
