@@ -57,7 +57,7 @@ function changeHeader(ev){
             break
     }
     var past = document.getElementById('pastUsers')
-    past.innerHTML += "<p>"+ name + ', '+age+"</p>"
+    past.innerHTML += `<p>${name}, ${age}</p>`
     f.reset()
     //set cursor back to the name
     f.userName.focus()
