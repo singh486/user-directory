@@ -30,8 +30,12 @@ function changeH4(){
 
 
 const changeHeaderButton = document.getElementById('headerChange')
+
 function changeHeader(ev){
     ev.preventDefault()
+    const f = ev.target
+    const age = f.age.value
+    const name = f.userName.value
     var newTitle = document.getElementById('form1').elements[0].value
     var choice = document.getElementById('headerChoice')
     var chosen = choice.options[choice.selectedIndex].value;
@@ -52,9 +56,11 @@ function changeHeader(ev){
             header4.textContent = newTitle
             break
     }
-    var past = document.getElementById('pastHeader')
-    past.innerHTML += "<p>"+ newTitle + "</p>"
-    document.getElementById('form1').elements[0].value = ''
+    var past = document.getElementById('pastUsers')
+    past.innerHTML += "<p>"+ name + ', '+age+"</p>"
+    f.reset()
+    //set cursor back to the name
+    f.userName.focus()
 }
 
 const backgroundButton = document.getElementById('colorChange')
