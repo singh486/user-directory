@@ -60,10 +60,17 @@ function changeHeader(ev){
     var past = document.getElementById('pastUsers')
     //past.innerHTML += `<p>${name}, ${age}</p>`
 
-    const p = document.createElement('p')
-    p.textContent = `${name}, ${age}`
-    p.style.backgroundColor = color    
-    past.appendChild(p)
+    const list = document.createElement('ul')
+    const nameItem = document.createElement('li')
+    const ageItem = document.createElement('li')
+
+    nameItem.textContent = `Name: ${name}`
+    list.appendChild(nameItem)
+
+    ageItem.textContent = `Age: ${age}`
+    list.appendChild(ageItem)
+    
+    past.appendChild(list)
 
     f.reset()
     //set cursor back to the name automatically
