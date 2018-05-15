@@ -52,6 +52,8 @@ function changeHeader(ev){
             header4.textContent = newTitle
             break
     }
+    var past = document.getElementById('pastHeader')
+    past.innerHTML += "<p>"+ newTitle + "</p>"
     document.getElementById('form1').elements[0].value = ''
 }
 
