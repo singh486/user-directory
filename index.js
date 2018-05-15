@@ -30,7 +30,8 @@ function changeH4(){
 
 
 const changeHeaderButton = document.getElementById('headerChange')
-function changeHeader(){
+function changeHeader(ev){
+    ev.preventDefault()
     var newTitle = document.getElementById('form1').elements[0].value
     var choice = document.getElementById('headerChoice')
     var chosen = choice.options[choice.selectedIndex].value;
@@ -61,6 +62,10 @@ function changeBackground(){
     var rgb = 'rgb('+r+','+g+','+b+')'
     document.body.style.background = rgb
 }
+
+const form = document.querySelector('#form1')
+form.addEventListener('submit', changeHeader)
+
 button.addEventListener('click', changeText)
 h1Button.addEventListener('click', changeH1)
 h2Button.addEventListener('click', changeH2)
