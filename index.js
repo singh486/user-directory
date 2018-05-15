@@ -63,13 +63,22 @@ function changeHeader(ev){
     const list = document.createElement('ul')
     const nameItem = document.createElement('li')
     const ageItem = document.createElement('li')
+    const colorItem = document.createElement('li')
+    const colorDiv = document.createElement('div')
 
     nameItem.textContent = `Name: ${name}`
     list.appendChild(nameItem)
 
     ageItem.textContent = `Age: ${age}`
     list.appendChild(ageItem)
-    
+
+    colorDiv.style.backgroundColor = color
+    colorDiv.style.width = '6rem'
+    colorDiv.style.height = '3rem'
+    colorItem.textContent = 'Favorite Color: '
+    colorItem.appendChild(colorDiv)
+    list.appendChild(colorItem)
+
     past.appendChild(list)
 
     f.reset()
