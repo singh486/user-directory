@@ -36,6 +36,7 @@ function changeHeader(ev){
     const f = ev.target
     const age = f.age.value
     const name = f.userName.value
+    const color = f.favoriteColor.value
     var newTitle = document.getElementById('form1').elements[0].value
     var choice = document.getElementById('headerChoice')
     var chosen = choice.options[choice.selectedIndex].value;
@@ -61,8 +62,9 @@ function changeHeader(ev){
 
     const p = document.createElement('p')
     p.textContent = `${name}, ${age}`
+    p.style.backgroundColor = color    
     past.appendChild(p)
-    
+
     f.reset()
     //set cursor back to the name automatically
     f.userName.focus()
