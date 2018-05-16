@@ -44,7 +44,11 @@ function renderListItem(item){
     const li = document.createElement('li')
     if(item == "userName"){
         li.textContent = `Name: ${itemVal}`
-    }else{
+    }
+    else if(item == "favoriteColor"){
+        li.appendChild(renderColor())
+    }
+    else{
         li.textContent = `Age: ${itemVal}`
     }    
     return li
@@ -89,6 +93,20 @@ function changeHeader(ev){
             header4.textContent = newTitle
             break
     }
+
+    const user ={
+        userName: f.userName.value,
+        age: f.age.value,
+        favoriteColor: renderColor(),
+    }
+    const labels = Object.keys(user)
+
+    const list = document.createElement('ul')
+    labels.forEach(function(label){
+        const item = renderListItem(label)
+        list.appendChild(item)
+    })
+
     var past = document.getElementById('pastUsers')
     //past.innerHTML += `<p>${name}, ${age}</p>`
     past.appendChild(renderList())
