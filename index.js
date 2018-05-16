@@ -46,6 +46,7 @@ function renderListItem(item){
         li.textContent = `Name: ${itemVal}`
     }
     else if(item == "favoriteColor"){
+        li.textContent = `Favorite Color:`
         li.appendChild(renderColor())
     }
     else{
@@ -54,14 +55,20 @@ function renderListItem(item){
     return li
 }
 
-function renderList(){
-    const list = document.createElement('ul')
-    const colorItem = document.createElement('li')
-    list.appendChild(renderListItem("userName"))
-    list.appendChild(renderListItem("age"))
-    colorItem.textContent = 'Favorite Color: '
-    colorItem.appendChild(renderColor())
-    list.appendChild(colorItem)
+function renderList(data){
+     const list = document.createElement('ul')
+    // const colorItem = document.createElement('li')
+    // list.appendChild(renderListItem("userName"))
+    // list.appendChild(renderListItem("age"))
+    // colorItem.textContent = 'Favorite Color: '
+    // colorItem.appendChild(renderColor())
+    // list.appendChild(colorItem)
+    const labels = Object.keys(data)
+    
+    labels.forEach(function(label){
+        const item = renderListItem(label)
+        list.appendChild(item)
+    })
     return list
 }
 
@@ -99,17 +106,11 @@ function changeHeader(ev){
         age: f.age.value,
         favoriteColor: renderColor(),
     }
-    const labels = Object.keys(user)
 
-    const list = document.createElement('ul')
-    labels.forEach(function(label){
-        const item = renderListItem(label)
-        list.appendChild(item)
-    })
 
     var past = document.getElementById('pastUsers')
     //past.innerHTML += `<p>${name}, ${age}</p>`
-    past.appendChild(renderList())
+    past.appendChild(renderList(user))
 
     f.reset()
     //set cursor back to the name automatically
