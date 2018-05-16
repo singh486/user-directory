@@ -1,3 +1,26 @@
 body{
-    font-family: sans-serif;
+    font-family: 'Franklin Gothic Medium', serif;
+}
+
+main{
+    display: flex;
+    justify-content: space-around;
+}
+
+#form1{
+    background-color: #eeeeee;
+    padding: 1rem;
+    border: 1px solid #e3e3e3;
+}
+
+label{
+    display: block;
+}
+
+li{
+    list-style: none;
+}
+
+dl li{
+    list-style: none;
 }

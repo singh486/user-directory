@@ -26,30 +26,34 @@
   <pre>
 
   </pre>
+<main>
+        <form id="form1">
+                Change the header title:<br>
+                <input type = "text" name = "newTitle">
+                <select id="headerChoice">
+                      <option value = "h1">Header 1</option>
+                      <option value = "h2">Header 2</option>
+                      <option value = "h3">Header 3</option>
+                      <option value = "h4">Header 4</option>
+                  </select>
+                <button type = "submit" id = "headerChange">Customize the Header!</button>
+                <pre>
+                      
+              </pre>
+              <label for="userName"> User Name: </label>
+              <input type="text" name = "userName"  autofocus>
+                <label for="age"> Age: </label>
+                <input type="number" name = "age">
+          
+                <p>
+                    <label for="favoriteColor" value = "#000000">Favorite Color: </label>
+                    <input type="color" name="favoriteColor">
+                </p>
+            </form>
 
-  <form id="form1">
-      Change the header title:<br>
-      <input type = "text" name = "newTitle">
-      <select id="headerChoice">
-            <option value = "h1">Header 1</option>
-            <option value = "h2">Header 2</option>
-            <option value = "h3">Header 3</option>
-            <option value = "h4">Header 4</option>
-        </select>
-      <button type = "submit" id = "headerChange">Customize the Header!</button>
-      <pre>
-            
-    </pre>
-    <label for="userName"> User Name: </label>
-    <input type="text" name = "userName"  autofocus>
-      <label for="age"> Age: </label>
-      <input type="number" name = "age">
-
-      <p>
-          <label for="favoriteColor" value = "#000000">Favorite Color: </label>
-          <input type="color" name="favoriteColor">
-      </p>
-  </form>
+            <div id = "pastUsers">
+                </div>
+</main>
   <pre>
 
   </pre>
@@ -57,8 +61,7 @@
   <pre>
         
 </pre>
-  <div id = "pastUsers"> Users: 
-  </div>
+
 
   <script src="index.js"></script>
 

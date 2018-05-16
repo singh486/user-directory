@@ -42,21 +42,38 @@ function renderColor(){
 function renderListItem(item){
     const itemVal = document.getElementById('form1').elements[item].value
     const li = document.createElement('li')
-    if(item == "userName"){
-        li.textContent = `Name: ${itemVal}`
+    const term = document.createElement('dt')
+    term.textContent = item
+    
+    const description = document.createElement('dd')
+    // if(item == "userName"){
+    //     li.textContent = `Name: ${itemVal}`
+    // }
+    // else if(item == "favoriteColor"){
+    //     li.textContent = `Favorite Color:`
+    //     li.appendChild(renderColor())
+    // }
+    // else{
+    //     li.textContent = `Age: ${itemVal}`
+    // }    
+
+    try{
+        if(item == "favoriteColor"){
+            description.appendChild(renderColor())
+        }else{
+            description.appendChild(itemVal)
+        }
+        
+    }catch(e){
+        description.textContent += itemVal
     }
-    else if(item == "favoriteColor"){
-        li.textContent = `Favorite Color:`
-        li.appendChild(renderColor())
-    }
-    else{
-        li.textContent = `Age: ${itemVal}`
-    }    
+    li.appendChild(term)
+    li.appendChild(description)
     return li
 }
 
 function renderList(data){
-     const list = document.createElement('ul')
+     const list = document.createElement('dl')
     // const colorItem = document.createElement('li')
     // list.appendChild(renderListItem("userName"))
     // list.appendChild(renderListItem("age"))
@@ -65,7 +82,7 @@ function renderList(data){
     // list.appendChild(colorItem)
     const labels = Object.keys(data)
     
-    labels.forEach(function(label){
+    labels.forEach(label =>{
         const item = renderListItem(label)
         list.appendChild(item)
     })
